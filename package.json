@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "callback": "node main.js",
-    "async-await": "node main-async-await.js"
+    "async-await": "node main-async-await.js",
+    "simple": "node simple.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
