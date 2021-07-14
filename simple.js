@@ -11,3 +11,11 @@ const main = () => {
 };
 
 main();
+
+getSquareIfEven((error, number) => {
+  if (error) {
+    console.log(`Error is: ${error}`);
+  } else {
+    console.log(number);
+  }
+});
