@@ -1,10 +1,10 @@
 const callback = require("./callback");
 
-const main1 = (number) =>
+const main1 = (makebread) =>
   new Promise((resolve, reject) => {
     setTimeout(() => {
-      typeof number === "number"
-        ? resolve(number * 2)
+      typeof makebread === "string"
+        ? resolve(makebread + " and ")
         : reject("Number must be provided");
     }, 2000);
   });
@@ -25,12 +25,14 @@ const main = () => {
 };
 
 main();
-main1(2)
+main1("get the yeast")
   .then((data) => {
-    return main1(data);
+    const data2 = data + "make flour";
+    return main1(data2);
   })
   .then((data) => {
-    return main1(data);
+    const data3 = data + "add ingrediets and make dough";
+    return main1(data3);
   })
   .then((data) => {
     console.log(data);
