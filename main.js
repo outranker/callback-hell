@@ -1,5 +1,14 @@
 const callback = require("./callback");
 
+const main1 = (number) =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      typeof number === "number"
+        ? resolve(number * 2)
+        : reject("Number must be provided");
+    }, 2000);
+  });
+
 const main = () => {
   console.log("\n\x1b[32m", "starting ...");
 
@@ -16,3 +25,16 @@ const main = () => {
 };
 
 main();
+main1(2)
+  .then((data) => {
+    return main1(data);
+  })
+  .then((data) => {
+    return main1(data);
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
