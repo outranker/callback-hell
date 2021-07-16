@@ -40,3 +40,18 @@ main1("get the yeast")
   .catch((error) => {
     console.log(error);
   });
+
+const late = async () => {
+  for (let i = 0; i < 5; i++) {
+    callback(5, (err, result) => {
+      if (err) {
+        console.log("\x1b[41m", "error occured");
+        return;
+      }
+      console.log("\x1b[36m", "yay, we got the result", result);
+      console.log("\x1b[31m", "ending ...\n");
+    });
+  }
+  console.log("finish");
+};
+late();
